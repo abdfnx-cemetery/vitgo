@@ -1,0 +1,14 @@
+{
+  "name": "@botway/vitgo",
+  "version": "0.1.0",
+  "description": "Vite + Go - No Deps",
+  "author": "@abdfnx",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/botwayorg/vitgo/issues"
+  },
+  "homepage": "https://github.com/botwayorg/vitgo#readme",
+  "dependencies": {
+    "react-refresh": "^0.14.0"
+  }
+}

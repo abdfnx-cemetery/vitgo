@@ -1,0 +1,14 @@
+lockfileVersion: 5.4
+
+specifiers:
+  react-refresh: ^0.14.0
+
+dependencies:
+  react-refresh: 0.14.0
+
+packages:
+
+  /react-refresh/0.14.0:
+    resolution: {integrity: sha512-wViHqhAd8OHeLS/IRMJjTSDHF3U9eWi62F/MledQGPdJGDhodXJ9PBLNGr6WWL7qlH12Mt3TyTpbS+hGXMjCzQ==}
+    engines: {node: '>=0.10.0'}
+    dev: false
