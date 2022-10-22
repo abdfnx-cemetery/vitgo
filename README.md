@@ -90,22 +90,22 @@ var vitGo *vitgo.VitGo
 
 func main() {
     // Production configuration.
-   config := &vitgo.ViteConfig{
+    config := &vitgo.ViteConfig{
 	   Environment: "production",
 	   AssetsPath:  "dist",
 	   EntryPoint:  "src/main.js",
 	   Platform:    "react",
 	   FS:          os.DirFS("frontend"),
-   }
+    }
 
     // Development configuration
-   config := &vitgo.ViteConfig{
+    config := &vitgo.ViteConfig{
 	   Environment: "development",
 	   AssetsPath:  "frontend",
 	   EntryPoint:  "src/main.js",
 	   Platform:    "react",
 	   FS:          os.DirFS("frontend"),
-   }
+    }
 
     // Parse the manifest and get a struct that describes
     // where the assets are.
