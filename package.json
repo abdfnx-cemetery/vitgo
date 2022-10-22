@@ -1,7 +1,7 @@
 {
   "name": "@botway/vitgo",
   "version": "0.1.0",
-  "description": "Vite + Go - No Deps",
+  "description": "Vite + Go + No Deps",
   "author": "@abdfnx",
   "license": "MIT",
   "bugs": {
