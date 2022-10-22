@@ -3,6 +3,7 @@ package vitgo
 import (
 	"log"
 	"net/http"
+	"strings"
 )
 
 // Redirector for dev server
@@ -18,7 +19,11 @@ func (vg *VitGo) DevServerRedirector() http.Handler {
 
 		rest := original[len(prefix)-1:]
 
-		log.Println("rest: ", rest)
+		escapedRest := strings.Replace(rest, "\n", "", -1)
+		escapedRest = strings.Replace(escapedRest, "\r", "", -1)
+
+		log.Println("rest: ", escapedRest)
+
 		w.Header().Set("Content-Type", "application/javascript")
 		http.Redirect(w, r, vg.DevServer+rest, http.StatusPermanentRedirect)
 	}

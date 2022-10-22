@@ -84,7 +84,10 @@ func (vg *VitGo) guardedFileServer(serveDir fs.FS) http.Handler {
 		}
 
 		if vg.Debug {
-			log.Println("entered FS", r.URL.Path)
+			escapedURLPath := strings.Replace(r.URL.Path, "\n", "", -1)
+			escapedURLPath = strings.Replace(escapedURLPath, "\r", "", -1)
+
+			log.Println("entered FS", escapedURLPath)
 			dir, err := fs.ReadDir(serveDir, ".")
 
 			if err != nil {
@@ -201,10 +204,13 @@ func logRequest(next http.Handler) http.Handler {
 		next.ServeHTTP(ww, r)
 
 		defer func() {
+			escapedReqURI := strings.Replace(r.URL.RequestURI(), "\n", "", -1)
+			escapedReqURI = strings.Replace(escapedReqURI, "\r", "", -1)
+
 			log.Printf(
 				"%s - %s %s %s (%d)",
 				r.RemoteAddr, r.Proto, r.Method,
-				r.URL.RequestURI(), ww.RetCode,
+				escapedReqURI, ww.RetCode,
 			)
 		}()
 	})
