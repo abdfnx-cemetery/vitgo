@@ -89,23 +89,21 @@ var dist embed.FS
 var vitGo *vitgo.VitGo
 
 func main() {
-    // This:
     // Production configuration.
-	config := &vitgo.ViteConfig{
+   config := &vitgo.ViteConfig{
 		Environment: "production",
 		AssetsPath:  "dist",
 		EntryPoint:  "src/main.js",
-		Platform:    "vue",
-		FS:          frontend,
+		Platform:    "react",
+		FS:          os.DirFS("frontend"),
 	}
 
-    // OR this:
     // Development configuration
-	config := &vitgo.ViteConfig{
+   config := &vitgo.ViteConfig{
 		Environment: "development",
 		AssetsPath:  "frontend",
 		EntryPoint:  "src/main.js",
-		Platform:    "vue",
+		Platform:    "react",
 		FS:          os.DirFS("frontend"),
 	}
 
@@ -158,7 +156,6 @@ mux := chi.NewMux()
 ...
 
 mux.Handle("/src/*", fsHandler)
-
 ```
 
 YMMV :-)
