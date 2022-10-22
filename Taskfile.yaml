@@ -1,0 +1,13 @@
+# https://taskfile.dev
+
+version: "3"
+
+tasks:
+  clean:
+    cmds:
+      - rm -rf node_modules react/preamble.js
+
+  preamble:
+    cmds:
+      - if ! [ -d "node_modules" ]; then pnpm i; fi
+      - pnpm preamble

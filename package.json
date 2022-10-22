@@ -8,7 +8,13 @@
     "url": "https://github.com/botwayorg/vitgo/issues"
   },
   "homepage": "https://github.com/botwayorg/vitgo#readme",
+  "scripts": {
+    "preamble": "browserify react/refresh-loader.js -o react/preamble.js"
+  },
   "dependencies": {
     "react-refresh": "^0.14.0"
+  },
+  "devDependencies": {
+    "browserify": "^17.0.0"
   }
 }
